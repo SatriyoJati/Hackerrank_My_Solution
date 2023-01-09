@@ -9,30 +9,30 @@ int main()
     int n;
     scanf("%d", &n);
     // Complete the code to print the pattern.
-    int i, j, k,l;
-    i = j = k = l= 0;
+    int row, column, col_pattern,row_pattern;
+    row = column = col_pattern =  row_pattern = 0;
 
-    for (i = 0; i < 2 * n - 1; i++)
+    for (row = 0; row < 2 * n - 1; row++)
     {
-        for (j = 0; j < 2 * n - 1; j++)
+        for (column = 0; column < 2 * n - 1; column++)
         {
-            if (j < n && j <= l )
+            if (column < n && column <= row_pattern )
             {
-                k = n - j;
-                printf("%d ", k);
+                col_pattern = n - column;
+                printf("%d ", col_pattern);
             }
-            else if (j >= n && j >= 2 * n - 1 - l )
+            else if (column >= n && column >= 2 * n - 1 - row_pattern )
                 {
-                    printf("%d ", ++k);
+                printf("%d ", ++col_pattern);
                 }    
             else
             {
-                printf("%d ", k);
+                printf("%d ", col_pattern);
             }
         }
-        if(i < n-1) l++;
+        if(row < n-1) row_pattern++;
         else
-             l--;
+             row_pattern--;
         printf("\n");
     }
 
